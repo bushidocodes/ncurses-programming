@@ -4,7 +4,6 @@
 int main()
 {
     char text[] = "Armstrong walks on moon";
-    int len = strlen(text);
 
     initscr();
 

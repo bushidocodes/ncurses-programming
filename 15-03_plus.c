@@ -5,9 +5,6 @@ int main()
     initscr();
     curs_set(0);
 
-    int maxx = getmaxx(stdscr);
-    int maxy = getmaxy(stdscr);
-
     move(0, COLS / 2);
     vline(0, LINES);
 

@@ -4,8 +4,6 @@ int main()
 {
     char text[] = "Scroll away! ";
 
-    int x;
-
     initscr();
 
     WINDOW *sub = subwin(stdscr, 10, 30, 6, 24);

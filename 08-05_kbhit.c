@@ -37,7 +37,7 @@ int main()
         printw("%2d ", i);
         refresh();
         napms(500);
-        if (did_hit = kbhit())
+        if ((did_hit = kbhit()))
             break;
     }
 

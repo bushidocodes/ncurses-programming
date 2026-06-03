@@ -3,7 +3,6 @@
 int main()
 {
     char text[] = "This is some wrapping.  ";
-    int x;
 
     initscr();
 

@@ -11,7 +11,7 @@ int main()
     refresh();
     getch();
 
-    for (int i = 0; i < strlen(original); i++)
+    for (size_t i = 0; i < strlen(original); i++)
     {
         move(0, 15);
         delch();
@@ -19,7 +19,7 @@ int main()
         napms(250);
     }
 
-    for (int i = 0; i < strlen(replace); i++)
+    for (size_t i = 0; i < strlen(replace); i++)
     {
         move(0, 15 + i);
         insch(replace[i]);
