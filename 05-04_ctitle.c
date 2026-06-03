@@ -4,7 +4,6 @@
 void center(int row, char *title)
 {
     int len = strlen(title);
-    int y = getmaxy(stdscr);
     int width = getmaxx(stdscr);
     int indent = (width - len) / 2;
 

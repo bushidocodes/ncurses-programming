@@ -11,8 +11,6 @@ int main(){
 		'\0'
 	};
 
-	int x = 0;
-
 	initscr();
 
 	for (int x = 0; string[x]; x++)

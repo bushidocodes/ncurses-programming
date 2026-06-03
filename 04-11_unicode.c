@@ -3,7 +3,7 @@
 #include <locale.h>
 
 int main(){
-	cchar_t heart = {A_NORMAL, L'\u2615'};
+	cchar_t heart = {A_NORMAL, {L'\u2615'}, 0};
 
 	setlocale(LC_ALL, "");
 

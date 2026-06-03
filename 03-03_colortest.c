@@ -4,7 +4,7 @@ int main(){
 	initscr();
 	int rc = 0;
 
-	if(!has_colors){
+	if(!has_colors()){
 		fprintf(stderr, "Terminal cannot do colors!\n");
 		goto DONE;
 	}
