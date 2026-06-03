@@ -2,6 +2,11 @@
 
 int main()
 {
+    initscr();
+    noecho();
+    keypad(stdscr, TRUE);
+    mousemask(ALL_MOUSE_EVENTS, NULL);
+
     if (!NCURSES_MOUSE_VERSION)
     {
         addstr("Mouse Functions Unavailable.\n");
@@ -9,11 +14,6 @@ int main()
         getch();
         goto done;
     }
-
-    initscr();
-    noecho();
-    keypad(stdscr, TRUE);
-    mousemask(ALL_MOUSE_EVENTS, NULL);
 
     while (true)
     {
