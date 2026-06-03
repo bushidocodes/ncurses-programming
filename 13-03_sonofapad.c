@@ -20,6 +20,7 @@ int main()
     WINDOW *sp = subpad(p, 10, 10, 0, 0);
     if (sp == NULL)
     {
+        delwin(p);
         endwin();
         puts("Unable to create subpad");
         return 1;
@@ -32,6 +33,8 @@ int main()
     prefresh(p, 0, 0, 5, 5, 16, 45);
     getch();
 
+    delwin(sp);
+    delwin(p);
     endwin();
     return 0;
 }
