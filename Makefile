@@ -1,5 +1,6 @@
 CC      = gcc
-CFLAGS  = -Wall -Wextra -Wno-unused-result -Wno-implicit-fallthrough
+CFLAGS  = -Wall -Wextra -Wno-unused-result -Wno-implicit-fallthrough \
+          -Werror -fsanitize=address,undefined -fno-omit-frame-pointer
 LIBS    = -lncursesw
 BINDIR  = bin
 
