@@ -8,7 +8,7 @@ Requires GCC and the wide-character ncurses library (`libncursesw-dev`).
 
 ```bash
 # Install on Debian/Ubuntu
-sudo apt install gcc libncurses-dev
+sudo apt install gcc libncursesw5-dev
 
 # Build all 100 programs into bin/
 make
