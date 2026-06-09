@@ -4,21 +4,18 @@ int main()
 {
     initscr();
 
-    if (!NCURSES_MOUSE_VERSION)
-    {
-        addstr("Mouse Functions Unavailable.\n");
-        refresh();
-        getch();
-        goto done;
-    }
-
+#ifdef NCURSES_MOUSE_VERSION
     addstr("Mouse Functions Available.\n");
     mousemask(ALL_MOUSE_EVENTS, NULL);
     addstr("Mouse Active");
     refresh();
     getch();
+#else
+    addstr("Mouse Functions Unavailable.\n");
+    refresh();
+    getch();
+#endif
 
-done:
     endwin();
     return 0;
 }
