@@ -1,11 +1,11 @@
 #include <ncurses.h>
 #include <string.h>
 
-#define NAME_CAPACITY 32
+#define BUFFER_SIZE 32
 
 int main()
 {
-    char name[NAME_CAPACITY];
+    char name[BUFFER_SIZE];
     int ch;
     initscr();
 
@@ -13,7 +13,7 @@ int main()
     {
         clear();
         addstr("Enter your name: ");
-        getnstr(name, NAME_CAPACITY);
+        getnstr(name, BUFFER_SIZE - 1);
         if (strlen(name) == 0)
             continue;
         move(1, 0);
