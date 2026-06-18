@@ -11,8 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Install ncurses
-        run: sudo apt-get install -y libncursesw5-dev
+      - name: Install ncurses and tmux
+        run: sudo apt-get install -y libncursesw5-dev tmux
 
       - name: Build
         run: make
+
+      - name: TUI tests
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
