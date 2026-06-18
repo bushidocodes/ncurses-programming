@@ -46,9 +46,16 @@ suite.
 
 | File | Purpose |
 |------|---------|
-| [`tui.py`](tui.py) | The harness — a `Tui` class wrapping tmux (launch, `type`, `key`, `screen`, `screen_ansi`, `wait_for`, `wait_for_exit`). No test-framework dependency. |
-| [`test_examples.py`](test_examples.py) | One representative `unittest` case per category of behavior. |
+| [`tui.py`](tui.py) | The harness — a `Tui` class wrapping tmux (launch, `type`, `key`, `screen`, `screen_ansi`, `wait_for`, `wait_until`, `wait_for_exit`). No test-framework dependency. |
+| [`test_examples.py`](test_examples.py) | One representative `unittest` case per category of behavior — the curated showcase. |
+| [`test_programs.py`](test_programs.py) | Broad coverage across the example programs, grouped by behavior. Its module docstring lists the few programs left uncovered and why. |
 | [`run.sh`](run.sh) | Build + run convenience wrapper. |
+
+Between the two files, the suite drives the large majority of the 100 example
+programs. The handful that are not asserted on — mouse-event injection,
+multi-second fixed sleeps, and ambiguous alternate-character-set glyphs — are
+enumerated with reasons at the top of `test_programs.py` rather than skipped
+silently.
 
 ## Writing a new test
 
