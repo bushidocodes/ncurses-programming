@@ -119,6 +119,8 @@ class Borders(unittest.TestCase):
     def test_box_frames_the_screen(self):
         cols, rows = 80, 24
         with Tui(example("00-01_box"), cols=cols, rows=rows) as t:
+            # No text to wait on — wait until the border has actually painted.
+            t.wait_until(lambda: len(t.line(0)) == cols)
             screen = t.screen()
             top, bottom = screen[0], screen[rows - 1]
             # Top and bottom rows span the full width with no gaps.

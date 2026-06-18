@@ -156,6 +156,25 @@ class Tui:
             f"--- last screen ---\n{last}\n-------------------"
         )
 
+    def wait_until(self, predicate, timeout=2.0, interval=0.05):
+        """Poll until ``predicate()`` is truthy. Returns its value.
+
+        For screens with no distinctive text to wait on (e.g. a drawn border),
+        pass a predicate over the captured screen, such as
+        ``lambda: len(t.line(0)) == cols``. Raises :class:`TimeoutError` (with
+        the last screen) on timeout.
+        """
+        deadline = time.monotonic() + timeout
+        while time.monotonic() < deadline:
+            value = predicate()
+            if value:
+                return value
+            time.sleep(interval)
+        raise TimeoutError(
+            f"predicate not satisfied within {timeout}s.\n"
+            f"--- last screen ---\n{self.text()}\n-------------------"
+        )
+
     def wait_for_exit(self, timeout=2.0, interval=0.05):
         """Block until the program's process exits. Returns True, or raises
         :class:`TimeoutError` if it is still running at the deadline."""
