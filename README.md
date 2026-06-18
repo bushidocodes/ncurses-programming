@@ -19,6 +19,24 @@ make clean
 
 On Windows, compile via WSL (Ubuntu 24.04 tested).
 
+## Test
+
+End-to-end tests drive the real compiled programs inside a headless `tmux`
+pane, send actual keystrokes, and assert on the rendered screen. They need
+`tmux` and `python3` (standard library only) in addition to the build
+toolchain.
+
+```bash
+# Linux / WSL
+tests/run.sh
+
+# On Windows, run them under WSL
+wsl -e bash tests/run.sh
+```
+
+See [tests/README.md](tests/README.md) for how the harness works and how to add
+cases.
+
 Run any example from the `bin/` directory in a terminal that supports ncurses (any standard Linux terminal or WSL terminal):
 
 ```bash
