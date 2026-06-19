@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install ncurses and tmux
         run: sudo apt-get install -y libncursesw5-dev tmux
